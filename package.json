@@ -7,9 +7,18 @@
   "author": "Tiffany Le-Nguyen <letiffany.nguyen@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "babel src -d build",
+    "start": "yarn build && node build/app.js",
     "precommit": "pretty-quick --staged"
   },
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "dotenv": "^5.0.1"
+  },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "husky": "^0.14.3",
     "prettier": "1.12.1",
     "pretty-quick": "^1.4.1"
