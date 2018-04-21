@@ -26,3 +26,34 @@ export const insertAccount = ({
     .then(callback)
     .catch(errorHandler);
 };
+
+// Increment marshmellows for a given array of users
+export const incrementMarshmellow = ({
+  discordIds, // array of discord ids
+  callback,
+  errorHandler,
+}) => {
+  const query = sql`
+		UPDATE accounts SET marshmellows = marshmellows + 1
+		WHERE discord_id IN (${discordIds.join()})
+		RETURNING accounts.marshmellows
+	`;
+
+  db
+    .any(query)
+    .then(callback)
+    .catch(errorHandler);
+};
+
+// Get total marshmellows for a single user
+export const getMarshmellows = ({ discordId, callback, errorHandler }) => {
+  const query = sql`
+		SELECT COUNT(marshmellows) FROM accounts
+		WHERE discord_id = ${discordId}
+	`;
+
+  db
+    .one(query)
+    .then(callback)
+    .catch(errorHandler);
+};

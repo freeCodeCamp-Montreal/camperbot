@@ -3,7 +3,11 @@ import './libs/dotenv';
 import './libs/postgres';
 
 import { db, sql } from './libs/postgres';
-import { insertAccount } from './queries';
+import {
+  insertAccount,
+  incrementMarshmellow,
+  getMarshmellows,
+} from './queries';
 
 import Discord from 'discord.js';
 
@@ -18,13 +22,13 @@ client.on('ready', () => {
 // Create an event listener for messages
 client.on('message', msg => {
   // Small check to see if bot is online
-  if (msg.content === 'ping') {
+  if (msg.content.startsWith('ping')) {
     msg.channel.send('pong!');
   }
 
   // Manually triggers insert into database for a user
   // Mostly for testing or for users before this bot was made
-  else if (msg.content === '/knowme' && !msg.author.bot) {
+  else if (msg.content === '!knowme' && !msg.author.bot) {
     const callback = data => msg.reply('I have you in my sights now :eyes: ');
 
     const errorHandler = err => {
@@ -47,7 +51,7 @@ client.on('message', msg => {
   // Inserts users that don't exist in our db from the discord
   // Must be a Firestarter
   else if (
-    msg.content === '/repopulate' &&
+    msg.content.startsWith('!repopulate') &&
     msg.member.roles.has('363153451833753600')
   ) {
     msg.guild.members.array().forEach(member => {
@@ -63,6 +67,40 @@ client.on('message', msg => {
       });
     });
     msg.reply('Repopulated accounts table.');
+  }
+
+  // Give user(s) marshmellows
+  else if (
+    msg.content.startsWith('!marshmellow') ||
+    msg.content.startsWith('!mm')
+  ) {
+    const usersIds = msg.mentions.users.keyArray();
+
+    const callback = data => {};
+
+    if (usersIds.length > 0) {
+      incrementMarshmellow({
+        discordIds: usersIds,
+        callback: () => {},
+        errorHandler: err => {
+          console.log('!mm', err);
+        },
+      });
+    } else {
+      msg.reply(
+        "you didn't say which user(s) you wanted to give a marshmellow to!"
+      );
+    }
+  }
+
+  // emoji id gotten with /:mmlove:
+  else if (msg.content.startsWith('!mine')) {
+    getMarshmellows({
+      discordId: msg.author.id,
+      callback: data => {
+        msg.reply(`you have **${data.count}** <:mmlove:437313395427901451>`);
+      },
+    });
   }
 });
 
