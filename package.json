@@ -9,14 +9,26 @@
   "scripts": {
     "build": "babel src -d build",
     "start": "yarn build && node build/app.js",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "migrate-up":
+      "yarn build &&NODE_PATH=build node -r  libs/dotenv node_modules/.bin/db-migrate up",
+    "migrate-down":
+      "NODE_PATH=build node -r src/libs/dotenv node_modules/.bin/db-migrate down",
+    "migrate-reset":
+      "NODE_PATH=build node -r libs/dotenv node_modules/.bin/db-migrate reset",
+    "cleanup": "yarn migrate-reset && yarn migrate-up"
   },
   "dependencies": {
-    "discord.js": "^11.3.2",
-    "dotenv": "^5.0.1",
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "db-migrate": "^0.11.1",
+    "db-migrate-pg": "^0.4.0",
+    "discord.js": "^11.3.2",
+    "dotenv": "^5.0.1",
+    "knex": "^0.14.6",
+    "pg-promise": "^8.4.0",
+    "sql-template-strings": "^2.2.2"
   },
   "devDependencies": {
     "husky": "^0.14.3",
