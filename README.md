@@ -41,7 +41,7 @@ Then run:
 yarn migrate-up
 ```
 
-You should see something along the lines of this ()
+You should see something along the lines of this:
 
 ```bash
 $ yarn build &&NODE_PATH=build node -r  libs/dotenv node_modules/.bin/db-migrate up
@@ -54,7 +54,7 @@ CREATE TABLE accounts(
 ...
 ```
 
-There should be no error message, and once you check your database you'll see it has tables in it now (:tada:).
+There should be no error message, and once you check your database you'll see it has tables in it now :tada:.
 
 ## Usage
 
