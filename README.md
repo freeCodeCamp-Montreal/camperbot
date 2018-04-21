@@ -58,12 +58,22 @@ There should be no error message, and once you check your database you'll see it
 
 ## Usage
 
+Install dependencies
+
 ```
 yarn
 ```
 
+Run
+
 ```
 yarn start
+```
+
+or, to reload of src file changes:
+
+```
+yarn start:watch
 ```
 
 ## Commands
