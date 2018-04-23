@@ -1,6 +1,8 @@
 # camperbot :construction:
 
-freeCodeCamp Montreal discord bot
+:fire: freeCodeCamp Montreal discord bot, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
+
+Discord: https://discord.gg/WZB4AuS 
 
 ## Prerequisites
 
@@ -81,14 +83,15 @@ yarn start:watch
 **At this time, many commands are intended for development purposes**
 
 * `ping`: Responds with `pong!`
-* `/knowme`: Checks if you are in the `accounts` table, and adds you if you're not
-* `/repopulate`: [**FireStarter**] Add every member of the server/guild who isn't in the `accounts` table
+* `!knowme`: Checks if you are in the `accounts` table, and adds you if you're not
+* `!repopulate`: [**FireStarter**] Add every member of the server/guild who isn't in the `accounts` table
 
 ## Upcoming Features
 
-* `/camping`: Give people a `Camper` role after having been part of the discord for a month (they trigger it)
+* `!help`: Sends the user a DM with a list of commands
+* `!camping`: Give people a `Camper` role after having been part of the discord for a month (they trigger it)
 * People can ask questions via it (via DM or in chat), it will respond with similar questions/answers and also notify mentors if we want it to (+ would add it to our docs website so others can see)
-* `/nextevent` -> responds with the next event planned (facebook link or something)
-* `/iknow` [comma separated stuff] -> Add a self-summary of what languages you know
-* `/theyknow @user` -> Check what languages/techs a user knows
+* `!nextevent` -> responds with the next event planned (facebook link or something)
+* `!iknow` [comma separated stuff] -> Add a self-summary of what languages/techs you know
+* `!theyknow @user` -> Check what languages/techs a user knows
 * give points to people that react/respond to questions / peer-review
