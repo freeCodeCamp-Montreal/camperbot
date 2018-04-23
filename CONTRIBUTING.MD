@@ -19,10 +19,7 @@ If the bot has an odd behaviour, feel free to tell us!
 2. If it doesn't, make a new [issue](https://github.com/sirMerr/camperbot/issues/new)! Follow the template.
 
 ## Suggest Enhancements :tada:
-If you feel like the bot is missing something, let us know. Right now there is no template for new features, but the main things to mention are:
-
-1. A description of the enhancement
-2. The reasoning for why we should implement this issue
+If you feel like the bot is missing something, let us know. Go to https://github.com/sirMerr/camperbot/issues/new?template=change.md and fill in the template.
 
 ## Add documentation :memo:
 Documentation is incredibly important, and is needed everywhere. Be it the markdown files (this one for example) or code documentation, we always need help in this department, especially in early development. Simply make a pull request with the file(s) you are helping to fix and you will be prompted with a template you can fill.
@@ -47,7 +44,7 @@ Example: `feature/avatars`, `fix/docs-typo`
 
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 50 characters or less
+* Limit the first line to 50 characters or less (not including emojis!)
 * Reference issues and pull requests liberally after the first line
 * Consider starting the commit message with an applicable emoji:
     * :sparkles: `:sparkles:` when adding a new feature
