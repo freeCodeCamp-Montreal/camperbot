@@ -34,10 +34,10 @@ export const incrementMarshmellow = ({
   errorHandler,
 }) => {
   const query = sql`
-		UPDATE accounts SET marshmellows = marshmellows + 1
-		WHERE discord_id IN (${discordIds.join()})
-		RETURNING accounts.marshmellows
-	`;
+    UPDATE accounts SET marshmellows = marshmellows + 1
+    WHERE discord_id IN (${discordIds.join()})
+    RETURNING accounts.marshmellows
+  `;
 
   db
     .any(query)
@@ -48,9 +48,9 @@ export const incrementMarshmellow = ({
 // Get total marshmellows for a single user
 export const getMarshmellows = ({ discordId, callback, errorHandler }) => {
   const query = sql`
-		SELECT COUNT(marshmellows) FROM accounts
-		WHERE discord_id = ${discordId}
-	`;
+    SELECT COUNT(marshmellows) FROM accounts
+    WHERE discord_id = ${discordId}
+  `;
 
   db
     .one(query)
