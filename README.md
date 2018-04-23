@@ -86,6 +86,8 @@ yarn start:watch
 * `ping`: Responds with `pong!`
 * `!knowme`: Checks if you are in the `accounts` table, and adds you if you're not
 * `!repopulate`: [**FireStarter**] Add every member of the server/guild who isn't in the `accounts` table
+* `!marshmellow [@username]` | `!mm [@username]`: Gives someone a marshmellow for being helpful (you can give marshmellows to multiple people at a time (ex: `!marshmellow @username1 @username2`)
+* `!mine`: Shows whoever triggered this command how many marshmellows they have
 
 ## Upcoming Features
 
