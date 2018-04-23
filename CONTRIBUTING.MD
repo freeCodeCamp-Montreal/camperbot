@@ -5,31 +5,56 @@ These are mostly guidelines, not rules. It is aimed for beginner to veteran deve
 
 This document takes inspiration from [Atom's Contribution Guide](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#issue-and-pull-request-labels). For parts that are still in progress, feel free to reference to them.
 
-# How to Contribute
-🚧
-## Report Bugs
-## Suggest Enhancements
-## Add documentation
-## Contribute Code
+This repo aims to be as friendly to new/budding developers, so if there is anything you would like to discuss with us about contributing, feel free to message the admins here: https://discord.gg/WZB4AuS :sparkles:
 
+# How to Contribute
+There are different ways for you to contribute, even if it's not via code! Look out for labels like `first-timer-only` or `good-first-issue` in our issues if you're not sure what to do.
+
+To contribute, you can:
+
+## Report Bugs :bug:
+If the bot has an odd behaviour, feel free to tell us!
+
+1. Check if the issue exists first: https://github.com/sirMerr/camperbot/issues
+2. If it doesn't, make a new [issue](https://github.com/sirMerr/camperbot/issues/new)! Follow the template.
+
+## Suggest Enhancements :tada:
+If you feel like the bot is missing something, let us know. Right now there is no template for new features, but the main things to mention are:
+
+1. A description of the enhancement
+2. The reasoning for why we should implement this issue
+
+## Add documentation :memo:
+Documentation is incredibly important, and is needed everywhere. Be it the markdown files (this one for example) or code documentation, we always need help in this department, especially in early development. Simply make a pull request with the file(s) you are helping to fix and you will be prompted with a template you can fill.
+
+There are a few ways to make a pull request. If you just want to change a single file with a small documentation change or  markdown file, it's suggested to click on the pencil icon next to the file in GitHub.
+
+## Contribute Code :sparkles:
+:construction:
 
 # Styleguides
 
-### Git Commit Messages
+### git Branches
+Your branch name should try to start with one of the following followed by the main feature you're working on:
+
+* `feature/avatars` for when you are adding a new feature
+* `fix/` for when you are making a fix for a bug
+* `optimize/` for when you are not inherently changing the behaviour of something, but are still making it better
+
+Example: `feature/avatars`, `fix/docs-typo`
+
+### git Commit Messages
 
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 72 characters or less
+* Limit the first line to 50 characters or less
 * Reference issues and pull requests liberally after the first line
-* When only changing documentation, include `[ci skip]` in the commit title
 * Consider starting the commit message with an applicable emoji:
-    * :art: `:art:` when improving the format/structure of the code
+    * :sparkles: `:sparkles:` when adding a new feature
+    * :hammer: `:hammer:` when improving the format/structure of the code
     * :racehorse: `:racehorse:` when improving performance
     * :non-potable_water: `:non-potable_water:` when plugging memory leaks
     * :memo: `:memo:` when writing docs
-    * :penguin: `:penguin:` when fixing something on Linux
-    * :apple: `:apple:` when fixing something on macOS
-    * :checkered_flag: `:checkered_flag:` when fixing something on Windows
     * :bug: `:bug:` when fixing a bug
     * :fire: `:fire:` when removing code or files
     * :green_heart: `:green_heart:` when fixing the CI build
@@ -37,7 +62,7 @@ This document takes inspiration from [Atom's Contribution Guide](https://github.
     * :lock: `:lock:` when dealing with security
     * :arrow_up: `:arrow_up:` when upgrading dependencies
     * :arrow_down: `:arrow_down:` when downgrading dependencies
-    * :shirt: `:shirt:` when removing linter warnings
+    * :wrench: `:wrench:`when updating configuration files
 
 ### JavaScript Styleguide
 All code adheres to [prettier](prettier.io) standards with two differences, found in our [.prettierrc](./.prettierrc):
