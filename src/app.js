@@ -1,18 +1,16 @@
+import Discord from 'discord.js';
+
 // Side effect imports
 import './libs/dotenv';
 import './libs/postgres';
-
+// Module imports
 import { db, sql } from './libs/postgres';
-import {
-  insertAccount,
-  incrementMarshmellow,
-  getMarshmellows,
-} from './queries';
-
-import Discord from 'discord.js';
+import { knowme, repopulate, marshmellow, mine } from './commands';
 
 // Create an instance of Discord client
 const client = new Discord.Client();
+// Prefix that every command should start with
+const prefix = '!';
 
 // Bot will only start reacting to information once ready is emitted
 client.on('ready', () => {
@@ -21,86 +19,39 @@ client.on('ready', () => {
 
 // Create an event listener for messages
 client.on('message', msg => {
-  // Small check to see if bot is online
-  if (msg.content.startsWith('ping')) {
-    msg.channel.send('pong!');
-  }
+  const { content, author } = msg;
 
-  // Manually triggers insert into database for a user
-  // Mostly for testing or for users before this bot was made
-  else if (msg.content === '!knowme' && !msg.author.bot) {
-    const callback = data => msg.reply('I have you in my sights now :eyes: ');
-
-    const errorHandler = err => {
-      console.log(err);
-
-      // Duplicate user (we could instead do nothing on conflict)
-      // but this is more fun :D
-      if (err.code === '23505') {
-        msg.reply('I already know you!');
-      }
-    };
-
-    insertAccount({
-      discordId: msg.author.id,
-      callback,
-      errorHandler,
-    });
-  }
-
-  // Inserts users that don't exist in our db from the discord
-  // Must be a Firestarter
-  else if (
-    msg.content.startsWith('!repopulate') &&
-    msg.member.roles.has('363153451833753600')
-  ) {
-    msg.guild.members.array().forEach(member => {
-      insertAccount({
-        discordId: member.id,
-        createdAt: member.joinedAt,
-        callback: () => {
-          console.log(`INSERT ${member.displayName} : SUCCESS`);
-        },
-        errorHandler: err => {
-          console.log(`INSERT ${member.displayName} : FAILED`);
-        },
-      });
-    });
-    msg.reply('Repopulated accounts table.');
-  }
-
-  // Give user(s) marshmellows
-  else if (
-    msg.content.startsWith('!marshmellow') ||
-    msg.content.startsWith('!mm')
-  ) {
-    const usersIds = msg.mentions.users.keyArray();
-
-    const callback = data => {};
-
-    if (usersIds.length > 0) {
-      incrementMarshmellow({
-        discordIds: usersIds,
-        callback: () => {},
-        errorHandler: err => {
-          console.log('!mm', err);
-        },
-      });
-    } else {
-      msg.reply(
-        "you didn't say which user(s) you wanted to give a marshmellow to!"
-      );
+  // Returns true if the message content matches any of
+  // the given commands
+  const commandMatches = commands => {
+    for (let i = 0; (i = arguments.length); i++) {
+      if (`${prefix}${arguments[i]}` !== content) return false;
     }
-  }
+    return true;
+  };
 
-  // emoji id gotten with /:mmlove:
-  else if (msg.content.startsWith('!mine')) {
-    getMarshmellows({
-      discordId: msg.author.id,
-      callback: data => {
-        msg.reply(`you have **${data.count}** <:mmlove:437313395427901451>`);
-      },
-    });
+  // Do not evaluate a message not starting with  our prefix
+  if (content.startsWith(prefix)) {
+    switch (true) {
+      case commandMatches('ping'):
+        msg.channel.send('pong!');
+        break;
+      case commandMatches('knowme') && !msg.author.bot:
+        knowme(msg);
+        break;
+      case commandMatches('repopulate') &&
+        msg.member.roles.has('363153451833753600'):
+        repopulate(msg);
+        break;
+      case commandMatches('marshmellow', 'mm'):
+        marshmellow(msg);
+        break;
+      case commandMatches('mine'):
+        mine(msg);
+        break;
+      default:
+        break;
+    }
   }
 });
 
