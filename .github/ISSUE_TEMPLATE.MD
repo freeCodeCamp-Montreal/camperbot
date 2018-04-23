@@ -13,8 +13,8 @@
 ## Error Logs
 <!-- If running this locally, please provide a snippet of your errors (no screenshots please!) -->
 
-## Screenshots
-<!--- Provide a screenshot of the issue if appropriate -->
+## Screenshots/Code Links
+<!--- Provide a screenshot or working code link of the issue if appropriate -->
 
 ## Steps to Reproduce
 <!--- Provide an unambiguous set of steps to reproduce this bug. -->
@@ -25,7 +25,7 @@
 
 ## Environment
 <!--- Include as many relevant details about the environment you experienced the bug in -->
-- **camperbot version**: 
+- **camperbot version**:
 - **Discord version**:
 - **Node version**:
 - **yarn/npm version (`yarn version`/`npm -v`)**:
