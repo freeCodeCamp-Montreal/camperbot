@@ -4,7 +4,8 @@
 
 Discord: https://discord.gg/WZB4AuS 
 
-## Prerequisites
+## Installation
+### Prerequisites
 
 To run this you need to have
 
