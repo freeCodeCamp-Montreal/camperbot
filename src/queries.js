@@ -39,8 +39,6 @@ export const incrementMarshmellow = ({
     RETURNING accounts.marshmellows
   `;
 
-  console.log("'" + discordIds.join("','") + "'");
-
   db
     .any(query)
     .then(callback)
