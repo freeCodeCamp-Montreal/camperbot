@@ -44,13 +44,9 @@ export const repopulate = msg => {
 
 // Give user(s) marshmellows
 export const marshmellow = msg => {
-  console.log('hi');
-  console.log(msg.mentions.users);
   const usersIds = msg.mentions.users.keyArray();
 
   const callback = data => {};
-
-  console.log('usersIds: ', usersIds);
 
   if (usersIds.length > 0) {
     incrementMarshmellow({
