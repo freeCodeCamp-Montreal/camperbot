@@ -28,7 +28,6 @@ client.on('message', msg => {
   // Returns true if the message content matches any of
   // the given commands
   const commandMatches = commands => {
-    // console.log(commands)
     if (Array.isArray(commands)) {
       for (let i = 0; i < commands.length; i++) {
         if (
