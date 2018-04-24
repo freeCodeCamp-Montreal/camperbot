@@ -56,7 +56,6 @@ client.on('message', msg => {
         repopulate(msg);
         break;
       case commandMatches(['marshmellow', 'mm']):
-        console.log('mm');
         marshmellow(msg);
         break;
       case commandMatches('mine'):
