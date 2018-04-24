@@ -17,6 +17,7 @@ const pgp = pg();
 // Create database object
 const db = pgp(connection);
 // Create object for query builder
+// knex is not really being used right now, might be removed
 const knex = k({ client: 'pg', connection });
 
 export { db, knex, pgp, sql };
