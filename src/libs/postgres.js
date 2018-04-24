@@ -1,5 +1,5 @@
 /**
- * Sets up tje database connections so we can access
+ * Sets up the database connections so we can access
  * and manipulate it
  */
 import k from 'knex';
