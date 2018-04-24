@@ -1,3 +1,7 @@
+/**
+ * Contains the logic of commands which the users will
+ * send out
+ */
 import {
   insertAccount,
   incrementMarshmellow,
@@ -51,7 +55,7 @@ export const marshmellow = msg => {
   if (usersIds.length > 0) {
     incrementMarshmellow({
       discordIds: usersIds,
-      callback: () => {},
+      callback,
       errorHandler: err => {
         console.log('!mm', err);
       },

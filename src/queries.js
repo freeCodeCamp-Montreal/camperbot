@@ -1,3 +1,6 @@
+/**
+ * Methods which manipulate the database or queries it
+ */
 import { db, sql } from './libs/postgres';
 
 /**
