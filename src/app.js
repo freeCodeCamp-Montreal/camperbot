@@ -8,8 +8,8 @@ import Discord from 'discord.js';
 import './libs/dotenv';
 import './libs/postgres';
 // Module imports
-import { db, sql } from './libs/postgres';
 import { knowme, repopulate, marshmellow, mine } from './commands';
+import { insertAccount } from "./queries";
 
 // Create an instance of Discord client
 const client = new Discord.Client();

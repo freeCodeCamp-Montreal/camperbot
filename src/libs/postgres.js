@@ -1,3 +1,7 @@
+/**
+ * Sets up the database connections so we can access
+ * and manipulate it
+ */
 import k from 'knex';
 import pg from 'pg-promise';
 import sql from 'sql-template-strings';
