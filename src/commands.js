@@ -44,9 +44,13 @@ export const repopulate = msg => {
 
 // Give user(s) marshmellows
 export const marshmellow = msg => {
+  console.log('hi');
+  console.log(msg.mentions.users);
   const usersIds = msg.mentions.users.keyArray();
 
   const callback = data => {};
+
+  console.log('usersIds: ', usersIds);
 
   if (usersIds.length > 0) {
     incrementMarshmellow({
@@ -64,11 +68,13 @@ export const marshmellow = msg => {
 };
 
 // emoji id gotten with /:mmlove:
-const mine = msg => {
+export const mine = msg => {
   getMarshmellows({
     discordId: msg.author.id,
     callback: data => {
-      msg.reply(`you have **${data.count}** <:mmlove:437313395427901451>`);
+      msg.reply(
+        `you have **${data.marshmellows}** <:mmlove:437313395427901451>`
+      );
     },
   });
 };
