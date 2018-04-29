@@ -1,3 +1,7 @@
+/**
+ * Sets up the database connections so we can access
+ * and manipulate it
+ */
 import k from 'knex';
 import pg from 'pg-promise';
 import sql from 'sql-template-strings';
@@ -17,6 +21,7 @@ const pgp = pg();
 // Create database object
 const db = pgp(connection);
 // Create object for query builder
+// knex is not really being used right now, might be removed
 const knex = k({ client: 'pg', connection });
 
 export { db, knex, pgp, sql };

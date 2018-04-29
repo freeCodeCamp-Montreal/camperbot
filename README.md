@@ -2,11 +2,12 @@
 
 :fire: freeCodeCamp Montreal discord bot, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
 
-Discord: https://discord.gg/WZB4AuS 
+Discord: https://discord.gg/WZB4AuS
 
 **Note that this is currently hosted on heroku, but will most likely move to now soon after being public due to heroku's limitations**
 
 ## Installation
+
 ### Prerequisites
 
 To run this you need to have

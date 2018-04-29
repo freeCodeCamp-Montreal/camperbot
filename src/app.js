@@ -1,11 +1,15 @@
+/**
+ * Main entry point of our app. Sets up the client and
+ * lays out the different commands users
+ */
 import Discord from 'discord.js';
 
 // Side effect imports
 import './libs/dotenv';
 import './libs/postgres';
 // Module imports
-import { db, sql } from './libs/postgres';
 import { knowme, repopulate, marshmellow, mine } from './commands';
+import { insertAccount } from "./queries";
 
 // Create an instance of Discord client
 const client = new Discord.Client();
@@ -24,10 +28,17 @@ client.on('message', msg => {
   // Returns true if the message content matches any of
   // the given commands
   const commandMatches = commands => {
-    for (let i = 0; (i = arguments.length); i++) {
-      if (`${prefix}${arguments[i]}` !== content) return false;
+    if (Array.isArray(commands)) {
+      for (let i = 0; i < commands.length; i++) {
+        if (
+          `${prefix}${commands[i]}` === content.substr(0, content.indexOf(' '))
+        )
+          return true;
+      }
+      return false;
     }
-    return true;
+
+    return `${prefix}${commands}` === content;
   };
 
   // Do not evaluate a message not starting with  our prefix
@@ -43,7 +54,7 @@ client.on('message', msg => {
         msg.member.roles.has('363153451833753600'):
         repopulate(msg);
         break;
-      case commandMatches('marshmellow', 'mm'):
+      case commandMatches(['marshmellow', 'mm']):
         marshmellow(msg);
         break;
       case commandMatches('mine'):
