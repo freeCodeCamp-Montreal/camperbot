@@ -2,9 +2,12 @@
 
 :fire: freeCodeCamp Montreal discord bot, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
 
-Discord: https://discord.gg/WZB4AuS 
+Discord: https://discord.gg/WZB4AuS
+
+**Note that this is currently hosted on heroku, but will most likely move to now soon after being public due to heroku's limitations**
 
 ## Installation
+
 ### Prerequisites
 
 To run this you need to have
@@ -86,6 +89,8 @@ yarn start:watch
 * `ping`: Responds with `pong!`
 * `!knowme`: Checks if you are in the `accounts` table, and adds you if you're not
 * `!repopulate`: [**FireStarter**] Add every member of the server/guild who isn't in the `accounts` table
+* `!marshmellow [@username]` | `!mm [@username]`: Gives someone a marshmellow for being helpful (you can give marshmellows to multiple people at a time (ex: `!marshmellow @username1 @username2`)
+* `!mine`: Shows whoever triggered this command how many marshmellows they have
 
 ## Upcoming Features
 
@@ -95,4 +100,4 @@ yarn start:watch
 * `!nextevent` -> responds with the next event planned (facebook link or something)
 * `!iknow` [comma separated stuff] -> Add a self-summary of what languages/techs you know
 * `!theyknow @user` -> Check what languages/techs a user knows
-* give points to people that react/respond to questions / peer-review
+* give points to people that react/respond to questions/peer-review

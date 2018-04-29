@@ -1,0 +1,11 @@
+* [Home](/)
+* [Events](events.md)
+* [camperbot](camperbot/README.md)
+  * [Quick Start](camperbot/quickstart.md)
+  * [Commands](camperbot/commands.md)
+* [Mentors](mentors/README.md)
+  * [Our Mentors](mentors/our-mentors.md)
+  * [Becoming a Mentor](mentors/becoming-a-mentor.md)
+* Guides
+  * [Asking for Help](guides/asking-for-help.md)
+* [Super Useful Resources](resources.md)
