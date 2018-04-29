@@ -99,4 +99,4 @@ yarn start:watch
 * `!nextevent` -> responds with the next event planned (facebook link or something)
 * `!iknow` [comma separated stuff] -> Add a self-summary of what languages/techs you know
 * `!theyknow @user` -> Check what languages/techs a user knows
-* give points to people that react/respond to questions / peer-review
+* give points to people that react/respond to questions/peer-review
