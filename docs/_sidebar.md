@@ -1,4 +1,5 @@
 * [Home](/)
+* [Events](events.md)
 * [camperbot](camperbot/README.md)
   * [Quick Start](camperbot/quickstart.md)
   * [Commands](camperbot/commands.md)

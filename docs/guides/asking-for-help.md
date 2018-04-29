@@ -37,5 +37,6 @@ Make sure you have **a specific question** to ask and make sure to either:
 
 * post a snippet of the problematic code \([this](https://support.discordapp.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-) can help\)
 * point to the lines of your code where the problem lies if necessary \(via GitHub, codepen or equivalent\)
+* Use [codesandbox](https://codesandbox.io/) or [jsfiddle](https://jsfiddle.net/) to have an easily runnable version of your code/problem
 
 You can ask on [StackOverflow](https://stackoverflow.com/) , although that can be daunting and it should not be a question that has already asked. You can also ask within the discord’s help channels or ping mentors \(see the specialties of our mentors in the mentors section of the docs\)
