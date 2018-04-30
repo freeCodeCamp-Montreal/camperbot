@@ -23,6 +23,7 @@ export const knowme = msg => {
 
   insertAccount({
     discordId: msg.author.id,
+    createdAt: msg.member.joinedAt,
     callback,
     errorHandler,
   });
@@ -48,22 +49,21 @@ export const repopulate = msg => {
 
 // Give user(s) marshmellows
 export const marshmellow = msg => {
-  const usersIds = msg.mentions.users.keyArray();
+  const mentionedId = msg.mentions.users.first().id;
 
-  const callback = data => {};
-
-  if (usersIds.length > 0) {
+  if (mentionedId === msg.author.id) {
+    msg.reply("lol you can't give yourself marshmellows");
+  } else {
     incrementMarshmellow({
-      discordIds: usersIds,
-      callback,
+      discordId: mentionedId,
+      callback: () => {
+        console.log('!mm success');
+      },
       errorHandler: err => {
         console.log('!mm', err);
+        msg.reply('Unable to give marshmellows :(');
       },
     });
-  } else {
-    msg.reply(
-      "you didn't say which user(s) you wanted to give a marshmellow to!"
-    );
   }
 };
 

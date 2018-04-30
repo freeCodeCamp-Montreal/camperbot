@@ -32,13 +32,13 @@ export const insertAccount = ({
 
 // Increment marshmellows for a given array of users
 export const incrementMarshmellow = ({
-  discordIds, // array of discord ids
+  discordId, // array of discord ids
   callback,
   errorHandler,
 }) => {
   const query = sql`
     UPDATE accounts SET marshmellows = marshmellows + 1
-    WHERE discord_id IN (${"'" + discordIds.join() + "'"})
+    WHERE discord_id = ${discordId}
     RETURNING accounts.marshmellows
   `;
 
