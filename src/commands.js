@@ -59,7 +59,6 @@ export const marshmellow = msg => {
       discordId: user.id,
       callback: data => {
         console.log('!mm success');
-        console.log(data);
         msg.channel.send(
           `${user} you have ${
             data.marshmellows
