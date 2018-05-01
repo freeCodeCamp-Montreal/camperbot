@@ -43,7 +43,7 @@ export const incrementMarshmellow = ({
   `;
 
   db
-    .any(query)
+    .one(query)
     .then(callback)
     .catch(errorHandler);
 };
