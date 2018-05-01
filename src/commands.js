@@ -4,8 +4,8 @@
  */
 import {
   insertAccount,
-  incrementMarshmellow,
-  getMarshmellows,
+  incrementmarshmallow,
+  getmarshmallows,
 } from './queries';
 
 // Manually triggers insert into database for a user
@@ -47,27 +47,27 @@ export const repopulate = msg => {
   msg.reply('Repopulated accounts table.');
 };
 
-// Give user(s) marshmellows
-export const marshmellow = msg => {
+// Give user(s) marshmallows
+export const marshmallow = msg => {
   // Gets the first user mentioned in the message
   const user = msg.mentions.users.first();
 
   if (user.id === msg.author.id) {
-    msg.reply("lol you can't give yourself marshmellows");
+    msg.reply("lol you can't give yourself marshmallows");
   } else {
-    incrementMarshmellow({
+    incrementmarshmallow({
       discordId: user.id,
       callback: data => {
         console.log('!mm success');
         msg.channel.send(
           `${user} you have ${
-            data.marshmellows
-          } marshmellows! <:mmlove:437313395427901451>`
+            data.marshmallows
+          } marshmallows! <:mmlove:437313395427901451>`
         );
       },
       errorHandler: err => {
         console.log('!mm', err);
-        msg.reply('Unable to give marshmellows :(');
+        msg.reply('Unable to give marshmallows :(');
       },
     });
   }
@@ -75,11 +75,11 @@ export const marshmellow = msg => {
 
 // emoji id gotten with /:mmlove:
 export const mine = msg => {
-  getMarshmellows({
+  getmarshmallows({
     discordId: msg.author.id,
     callback: data => {
       msg.reply(
-        `you have **${data.marshmellows}** <:mmlove:437313395427901451>`
+        `you have **${data.marshmallows}** <:mmlove:437313395427901451>`
       );
     },
   });
