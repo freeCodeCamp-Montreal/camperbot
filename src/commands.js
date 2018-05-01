@@ -49,15 +49,21 @@ export const repopulate = msg => {
 
 // Give user(s) marshmellows
 export const marshmellow = msg => {
-  const mentionedId = msg.mentions.users.first().id;
+  // Gets the first user mentioned in the message
+  const user = msg.mentions.users.first();
 
-  if (mentionedId === msg.author.id) {
+  if (user.id === msg.author.id) {
     msg.reply("lol you can't give yourself marshmellows");
   } else {
     incrementMarshmellow({
-      discordId: mentionedId,
-      callback: () => {
+      discordId: user.id,
+      callback: data => {
         console.log('!mm success');
+        msg.channel.send(
+          `${user} you have ${
+            data.marshmellows
+          } marshmellows! <:mmlove:437313395427901451>`
+        );
       },
       errorHandler: err => {
         console.log('!mm', err);
