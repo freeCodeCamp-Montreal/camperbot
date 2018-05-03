@@ -86,7 +86,10 @@ yarn start:watch
 
 **At this time, many commands are intended for development purposes**
 
+For a full, detailed list of commands, go here: https://sirmerr.github.io/camperbot/#/camperbot/commands
+
 * `!ping`: Responds with `pong!`
+* `!help` | `!h`: Either shows a help for a single command, or DMs you a help link if no parameters are specified.
 * `!knowme`: Checks if you are in the `accounts` table, and adds you if you're not
 * `!repopulate`: [**FireStarter**] Add every member of the server/guild who isn't in the `accounts` table
 * `!marshmellow [@username]` | `!mm [@username]`: Gives someone a marshmellow for being helpful (you can give marshmellows to multiple people at a time (ex: `!marshmellow @username1 @username2`)
@@ -94,7 +97,6 @@ yarn start:watch
 
 ## Upcoming Features
 
-* `!help`: Sends the user a DM with a list of commands
 * `!camping`: Give people a `Camper` role after having been part of the discord for a month (they trigger it)
 * People can ask questions via it (via DM or in chat), it will respond with similar questions/answers and also notify mentors if we want it to (+ would add it to our docs website so others can see)
 * `!nextevent` -> responds with the next event planned (facebook link or something)
