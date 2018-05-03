@@ -1,6 +1,6 @@
 {
   "name": "camperbot",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "freeCodeCamp montreal discord bot",
   "main": "src/app.js",
   "repository": "git@github.com:sirMerr/camperbot.git",
@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-inline-json-import": "^0.2.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-plugin-inline-json-import": "^0.2.1",
     "db-migrate": "^0.11.1",
     "db-migrate-pg": "^0.4.0",
     "discord.js": "^11.3.2",
