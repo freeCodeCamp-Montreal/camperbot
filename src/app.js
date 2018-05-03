@@ -8,7 +8,14 @@ import Discord from 'discord.js';
 import './libs/dotenv';
 import './libs/postgres';
 // Module imports
-import { knowme, repopulate, marshmallow, mine, help } from './commands';
+import {
+  knowme,
+  repopulate,
+  marshmallow,
+  mine,
+  help,
+  helpSpecific,
+} from './commands';
 import { insertAccount } from './queries';
 
 // Create an instance of Discord client
@@ -60,7 +67,7 @@ client.on('message', msg => {
       case commandMatches(['help', 'h']):
         help(msg);
         break;
-      case content.matches(/^(!help|!h) [a-zA-Z]$/):
+      case content.match(/^(!help|!h) !?[a-zA-Z]+$/) !== null:
         helpSpecific(msg);
         break;
       default:

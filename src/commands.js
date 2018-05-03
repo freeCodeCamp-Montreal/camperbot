@@ -86,29 +86,69 @@ export const mine = msg => {
   });
 };
 
-// Sends a DM with all the commands
+// Sends a DM with the help embed dialog
 export const help = msg => {
   const description =
     'You can find a list of commands here:' +
     '\nhttps://sirmerr.github.io/camperbot/#/camperbot/commands' +
     '\n\nFor a specific command help, use `[!h|!help] CommandName` (for example `!h !marshmallow`)';
 
+  // Send a private embed message with a blue left border
   msg.author.send({
     embed: {
-      color: 3447003,
+      color: 0x0000ff,
       description,
     },
   });
 };
 
+// Send details of a given command
 export const helpSpecific = msg => {
-  const { content, author } = msg;
+  const { content, channel } = msg;
   const userRoles = msg.member.roles;
-  let helpDialog = '';
+  const command = content.split(' ')[1];
+  let commandInfo;
 
-  commandsList.forEach(command => {
-    if (userRoles.exists('name', command.role)) {
-      helpDialog += '';
-    }
-  });
+  // True if command exists, otherwise returns false
+  const commandExists =
+    commandsList.find(el => {
+      if (Array.isArray(el.names)) {
+        if (el.names.find(name => command === name) !== undefined) {
+          commandInfo = {
+            title: '`' + el.names.join('` | `') + '`',
+            description: el.description,
+            role: el.role,
+          };
+          return true;
+        }
+        return false;
+      }
+      if (el.names === command) {
+        commandInfo = {
+          title: '`' + command + '`',
+          description: el.description,
+          role: el.role,
+        };
+        return true;
+      }
+      return false;
+    }) !== undefined;
+
+  if (commandExists) {
+    channel.send({
+      embed: {
+        color: 0x0000ff,
+        title: commandInfo.title,
+        description: commandInfo.description,
+      },
+    });
+  } else {
+    channel.send({
+      embed: {
+        color: 0xff0000,
+        description:
+          "I can't find that command. Please check if the command exists [here](https://sirmerr.github.io/camperbot/#/camperbot/commands) ",
+      },
+    });
+  }
 };

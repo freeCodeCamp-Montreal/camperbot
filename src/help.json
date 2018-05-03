@@ -2,7 +2,8 @@
   {
     "names": ["!help", "!h"],
     "role": "@everyone",
-    "description": "Send you a private message with the help dialog"
+    "description":
+      "Either shows a help for a single command, or DMs you a help link if no parameters are specified."
   },
   {
     "names": "!mine",
