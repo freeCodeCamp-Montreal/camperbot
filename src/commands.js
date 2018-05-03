@@ -59,11 +59,18 @@ export const marshmallow = msg => {
     incrementmarshmallow({
       discordId: user.id,
       callback: data => {
-        console.log('!mm success');
+        const marshmallowEmojis = msg.guild.emojis
+          .filter(emoji => emoji.name.match('mm'))
+          .array();
+        const randomMarshmallowEmoji =
+          marshmallowEmojis[
+            Math.floor(Math.random() * marshmallowEmojis.length)
+          ];
+
         msg.channel.send(
           `${user} you have ${
             data.marshmallows
-          } marshmallows! <:mmlove:437313395427901451>`
+          } marshmallows! ${randomMarshmallowEmoji}`
         );
       },
       errorHandler: err => {
@@ -79,9 +86,13 @@ export const mine = msg => {
   getmarshmallows({
     discordId: msg.author.id,
     callback: data => {
-      msg.reply(
-        `you have **${data.marshmallows}** <:mmlove:437313395427901451>`
-      );
+      const marshmallowEmojis = msg.guild.emojis
+        .filter(emoji => emoji.name.match('mm'))
+        .array();
+      const randomMarshmallowEmoji =
+        marshmallowEmojis[Math.floor(Math.random() * marshmallowEmojis.length)];
+
+      msg.reply(`you have **${data.marshmallows}** ${randomMarshmallowEmoji}`);
     },
   });
 };
