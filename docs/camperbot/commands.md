@@ -4,7 +4,7 @@ All commands start with `!`
 
 | Commands              | Usage                               | Description                                                                                                                       |
 | --------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `!help`               | `!help`                             | 🚧Sends you a list of commands privately                                                                                          |
+| `!help`, `!h`         | `!help`, `!h !mine`                 | Either shows a help for a single command, or DMs you a help link if no parameters are specified.                                  |
 | `!marshmellow`, `!mm` | `!mm @someone`                      | Gives a user a marshellow for being helpful. Basically style points ✨                                                            |
 | `!mine`               | `!mine`                             | Tells you how many marshmellows you have                                                                                          |
 | `!knowme`             | `!knowme`                           | Mostly for testing purposes, adds you to the database's if you do not exist in it yet                                             |
