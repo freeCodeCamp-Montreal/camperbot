@@ -7,6 +7,7 @@ import {
   incrementmarshmallow,
   getmarshmallows,
 } from './queries';
+import commandsList from './help.json';
 
 // Manually triggers insert into database for a user
 // Mostly for testing or for users before this bot was made
@@ -82,5 +83,32 @@ export const mine = msg => {
         `you have **${data.marshmallows}** <:mmlove:437313395427901451>`
       );
     },
+  });
+};
+
+// Sends a DM with all the commands
+export const help = msg => {
+  const description =
+    'You can find a list of commands here:' +
+    '\nhttps://sirmerr.github.io/camperbot/#/camperbot/commands' +
+    '\n\nFor a specific command help, use `[!h|!help] CommandName` (for example `!h !marshmallow`)';
+
+  msg.author.send({
+    embed: {
+      color: 3447003,
+      description,
+    },
+  });
+};
+
+export const helpSpecific = msg => {
+  const { content, author } = msg;
+  const userRoles = msg.member.roles;
+  let helpDialog = '';
+
+  commandsList.forEach(command => {
+    if (userRoles.exists('name', command.role)) {
+      helpDialog += '';
+    }
   });
 };

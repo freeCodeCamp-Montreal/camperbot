@@ -1,0 +1,35 @@
+[
+  {
+    "names": ["!help", "!h"],
+    "role": "@everyone",
+    "description": "Send you a private message with the help dialog"
+  },
+  {
+    "names": "!mine",
+    "role": "@everyone",
+    "description": "Shows you how many marshmellows you have"
+  },
+  {
+    "names": ["!marshmellow", "!mm"],
+    "role": "@everyone",
+    "description":
+      "Gives someone a marshmellow for being helpful (ex: `!marshmellow @someone`)"
+  },
+  {
+    "names": "!ping",
+    "role": "@everyone",
+    "description": "Responds with `pong!`"
+  },
+  {
+    "names": "!repopulate",
+    "role": "FireStarter",
+    "description":
+      "Add every member of the server/guild who isn't in the `accounts` table"
+  },
+  {
+    "names": "!knowme",
+    "role": "@everyone",
+    "description":
+      "[For testing purposes] Check if you are in our database and adds you if you're not"
+  }
+]
