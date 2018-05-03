@@ -8,8 +8,8 @@ import Discord from 'discord.js';
 import './libs/dotenv';
 import './libs/postgres';
 // Module imports
-import { knowme, repopulate, marshmellow, mine } from './commands';
-import { insertAccount } from "./queries";
+import { knowme, repopulate, marshmallow, mine } from './commands';
+import { insertAccount } from './queries';
 
 // Create an instance of Discord client
 const client = new Discord.Client();
@@ -54,8 +54,8 @@ client.on('message', msg => {
         msg.member.roles.has('363153451833753600'):
         repopulate(msg);
         break;
-      case commandMatches(['marshmellow', 'mm']):
-        marshmellow(msg);
+      case commandMatches(['marshmallow', 'mm']):
+        marshmallow(msg);
         break;
       case commandMatches('mine'):
         mine(msg);

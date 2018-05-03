@@ -30,16 +30,16 @@ export const insertAccount = ({
     .catch(errorHandler);
 };
 
-// Increment marshmellows for a given array of users
-export const incrementMarshmellow = ({
+// Increment marshmallows for a given array of users
+export const incrementmarshmallow = ({
   discordId, // array of discord ids
   callback,
   errorHandler,
 }) => {
   const query = sql`
-    UPDATE accounts SET marshmellows = marshmellows + 1
+    UPDATE accounts SET marshmallows = marshmallows + 1
     WHERE discord_id = ${discordId}
-    RETURNING accounts.marshmellows
+    RETURNING accounts.marshmallows
   `;
 
   db
@@ -48,10 +48,10 @@ export const incrementMarshmellow = ({
     .catch(errorHandler);
 };
 
-// Get total marshmellows for a single user
-export const getMarshmellows = ({ discordId, callback, errorHandler }) => {
+// Get total marshmallows for a single user
+export const getmarshmallows = ({ discordId, callback, errorHandler }) => {
   const query = sql`
-    SELECT marshmellows FROM accounts
+    SELECT marshmallows FROM accounts
     WHERE discord_id = ${discordId}
   `;
 
