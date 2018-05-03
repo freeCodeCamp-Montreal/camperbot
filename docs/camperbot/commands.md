@@ -17,5 +17,5 @@ All commands start with `!`
 
 ### Ideas
 
-* Give **Contributor **role when someone attains a certain amount of marshmellows or give **Camper** role.
+* Give **Contributor** role when someone attains a certain amount of marshmellows or give **Camper** role.
 * Allow people to connect their github and do something idk :D
