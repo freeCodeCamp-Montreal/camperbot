@@ -1,6 +1,6 @@
 {
   "name": "camperbot",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "freeCodeCamp montreal discord bot",
   "main": "src/app.js",
   "repository": "git@github.com:sirMerr/camperbot.git",
@@ -33,6 +33,7 @@
     "sql-template-strings": "^2.2.2"
   },
   "devDependencies": {
+    "babel-plugin-inline-json-import": "^0.2.1",
     "husky": "^0.14.3",
     "nodemon": "^1.17.3",
     "prettier": "1.12.1",
