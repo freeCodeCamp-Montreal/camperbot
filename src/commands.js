@@ -4,8 +4,8 @@
  */
 import {
   insertAccount,
-  incrementmarshmallow,
-  getmarshmallows,
+  incrementMarshmallow,
+  getMarshmallows,
 } from './queries';
 import commandsList from './help.json';
 

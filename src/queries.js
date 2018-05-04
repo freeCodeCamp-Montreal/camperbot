@@ -31,7 +31,7 @@ export const insertAccount = ({
 };
 
 // Increment marshmallows for a given array of users
-export const incrementmarshmallow = ({
+export const incrementMarshmallow = ({
   discordId, // array of discord ids
   callback,
   errorHandler,
@@ -49,7 +49,7 @@ export const incrementmarshmallow = ({
 };
 
 // Get total marshmallows for a single user
-export const getmarshmallows = ({ discordId, callback, errorHandler }) => {
+export const getMarshmallows = ({ discordId, callback, errorHandler }) => {
   const query = sql`
     SELECT marshmallows FROM accounts
     WHERE discord_id = ${discordId}
