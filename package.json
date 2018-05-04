@@ -1,6 +1,6 @@
 {
   "name": "camperbot",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "freeCodeCamp montreal discord bot",
   "main": "src/app.js",
   "repository": "git@github.com:sirMerr/camperbot.git",
