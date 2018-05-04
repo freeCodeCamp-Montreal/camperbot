@@ -56,7 +56,7 @@ export const marshmallow = msg => {
   if (user.id === msg.author.id) {
     msg.reply("lol you can't give yourself marshmallows");
   } else {
-    incrementmarshmallow({
+    incrementMarshmallow({
       discordId: user.id,
       callback: data => {
         const marshmallowEmojis = msg.guild.emojis
@@ -81,9 +81,9 @@ export const marshmallow = msg => {
   }
 };
 
-// emoji id gotten with /:mmlove:
+// Return the user's total marshmallows
 export const mine = msg => {
-  getmarshmallows({
+  getMarshmallows({
     discordId: msg.author.id,
     callback: data => {
       const marshmallowEmojis = msg.guild.emojis
@@ -158,7 +158,7 @@ export const helpSpecific = msg => {
       embed: {
         color: 0xff0000,
         description:
-          "I can't find that command. Please check if the command exists [here](https://sirmerr.github.io/camperbot/#/camperbot/commands) ",
+          "I can't find that command. Please check if the command exists [here](https://sirmerr.github.io/camperbot/#/camperbot/commands)",
       },
     });
   }
