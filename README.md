@@ -1,4 +1,4 @@
-# camperbot :construction:
+# camperbot
 
 :fire: freeCodeCamp Montreal discord bot, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
 
@@ -38,6 +38,7 @@ To run this you need to have
     ```
 
 ### Local DB
+Note: You don't need this if you are not working on commands that rely on a database. Additionally, we use PostgreSQL.
 
 Set up your local database and fill the rest of your `.env` with its credentials.
 
