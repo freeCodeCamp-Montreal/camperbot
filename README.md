@@ -4,8 +4,6 @@
 
 Discord: https://discord.gg/WZB4AuS
 
-**Note that this is currently hosted on heroku, but will most likely move to now soon after being public due to heroku's limitations**
-
 ## Installation
 
 ### Prerequisites
