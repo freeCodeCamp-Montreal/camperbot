@@ -37,7 +37,7 @@ client.on('message', msg => {
   const commandMatches = commands => {
     if (Array.isArray(commands)) {
       for (let i = 0; i < commands.length; i++) {
-        if (`${prefix}${commands[i]}` === content) return true;
+        if (`${prefix}${commands[i]}` === content.split(' ')[0]) return true;
       }
       return false;
     }
