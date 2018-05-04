@@ -5,7 +5,7 @@ CREATE TABLE accounts(
   email VARCHAR(75),
 	discord_id BIGINT UNIQUE NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
-  marshmellows INTEGER DEFAULT 0,
+  marshmallows INTEGER DEFAULT 0,
   camper BOOLEAN DEFAULT false
 );
 

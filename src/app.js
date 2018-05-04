@@ -8,8 +8,15 @@ import Discord from 'discord.js';
 import './libs/dotenv';
 import './libs/postgres';
 // Module imports
-import { knowme, repopulate, marshmellow, mine } from './commands';
-import { insertAccount } from "./queries";
+import {
+  knowme,
+  repopulate,
+  marshmallow,
+  mine,
+  help,
+  helpSpecific,
+} from './commands';
+import { insertAccount } from './queries';
 
 // Create an instance of Discord client
 const client = new Discord.Client();
@@ -23,17 +30,14 @@ client.on('ready', () => {
 
 // Create an event listener for messages
 client.on('message', msg => {
-  const { content, author } = msg;
+  const { content, author, channel, member } = msg;
 
   // Returns true if the message content matches any of
   // the given commands
   const commandMatches = commands => {
     if (Array.isArray(commands)) {
       for (let i = 0; i < commands.length; i++) {
-        if (
-          `${prefix}${commands[i]}` === content.substr(0, content.indexOf(' '))
-        )
-          return true;
+        if (`${prefix}${commands[i]}` === content) return true;
       }
       return false;
     }
@@ -45,20 +49,26 @@ client.on('message', msg => {
   if (content.startsWith(prefix)) {
     switch (true) {
       case commandMatches('ping'):
-        msg.channel.send('pong!');
+        channel.send('pong!');
         break;
-      case commandMatches('knowme') && !msg.author.bot:
+      case commandMatches('knowme') && !author.bot:
         knowme(msg);
         break;
       case commandMatches('repopulate') &&
-        msg.member.roles.has('363153451833753600'):
+        member.roles.has('363153451833753600'):
         repopulate(msg);
         break;
-      case commandMatches(['marshmellow', 'mm']):
-        marshmellow(msg);
+      case commandMatches(['marshmallow', 'mm']):
+        marshmallow(msg);
         break;
       case commandMatches('mine'):
         mine(msg);
+        break;
+      case commandMatches(['help', 'h']):
+        help(msg);
+        break;
+      case content.match(/^(!help|!h) !?[a-zA-Z]+$/) !== null:
+        helpSpecific(msg);
         break;
       default:
         break;
