@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "lts/*"
+
+services: postgresql
+
+addons:
+  postgresql: "9.6"
+
+before_script:
+  - psql -c 'CREATE DATABASE ci;' -U postgres
+
+install: 
+  - yarn
+  - yarn build
+  - npm install -g codecov
+
+script:
+  - yarn test && codecov
+  - NODE_ENV=test yarn migrate-reset

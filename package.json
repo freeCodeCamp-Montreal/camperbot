@@ -11,14 +11,19 @@
     "start": "yarn build && node build/app.js",
     "start:watch":
       "nodemon --exec 'yarn build && node build/app.js' --watch src --ignore build",
+    "test": "NODE_ENV=test yarn cleanup && jest",
     "precommit": "pretty-quick --staged",
     "migrate-up":
-      "yarn build &&NODE_PATH=build node -r  libs/dotenv node_modules/.bin/db-migrate up",
+      "NODE_PATH=build node -r  libs/dotenv node_modules/.bin/db-migrate up",
     "migrate-down":
       "NODE_PATH=build node -r libs/dotenv node_modules/.bin/db-migrate down",
     "migrate-reset":
       "NODE_PATH=build node -r libs/dotenv node_modules/.bin/db-migrate reset",
     "cleanup": "yarn migrate-reset && yarn migrate-up"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -30,11 +35,13 @@
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
     "knex": "^0.14.6",
+    "lodash": "^4.17.10",
     "pg-promise": "^8.4.0",
     "sql-template-strings": "^2.2.2"
   },
   "devDependencies": {
     "husky": "^0.14.3",
+    "jest": "^22.4.3",
     "nodemon": "^1.17.3",
     "prettier": "1.12.1",
     "pretty-quick": "^1.4.1"

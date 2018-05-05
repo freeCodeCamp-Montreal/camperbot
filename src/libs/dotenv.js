@@ -1,11 +1,24 @@
 /**
  * dotenv config file. This gets run as early on as possible
- * in order for us to have access to our .env.
+ * in order for us to have access to our .env.*
  *
- * In later development, it can be configured to have multiple
- * configs
  */
 import * as dotenv from 'dotenv';
+import * as fs from 'fs';
+import { assert } from 'console';
 
-// Allows us to use process.env
-dotenv.config();
+assert(!!process.env.NODE_ENV, 'Missing env variable NODE_ENV');
+
+// Possible configs to look at
+const configs = [
+  `.env.${process.env.NODE_ENV}.local`,
+  `.env.${process.env.NODE_ENV}`,
+  `.env`,
+];
+
+configs.forEach(path => {
+  if (fs.existsSync(path)) {
+    // Allows us to use process.env using this config
+    dotenv.config({ path });
+  }
+});
