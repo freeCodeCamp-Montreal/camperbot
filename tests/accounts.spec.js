@@ -1,20 +1,21 @@
 // Jest automatically has babel-jest installed :D
+import uniqueId from 'lodash/uniqueId';
 import '../src/libs/dotenv';
 import { knex, pgp } from '../src/libs/postgres';
 import { insertAccount } from '../src/queries';
 
 let discordId;
 
-beforeEach(async () => {
+beforeAll(async () => {
   [discordId] = await knex('accounts')
     .insert({
-      discord_id: '143509445354323968',
+      discord_id: uniqueId(),
       created_at: '2018-04-07',
     })
     .returning('discord_id');
 });
 
-afterEach(async () => {
+afterAll(async () => {
   await knex('accounts')
     .delete()
     .where({ discord_id: discordId });
@@ -27,7 +28,7 @@ afterAll(async () => {
 
 test('Successfully inserts an account', async () => {
   insertAccount({
-    discordId: '153509445354323968',
+    discordId: uniqueId(),
     callback: () => {
       done();
     },

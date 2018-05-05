@@ -11,7 +11,7 @@
     "start": "yarn build && node build/app.js",
     "start:watch":
       "nodemon --exec 'yarn build && node build/app.js' --watch src --ignore build",
-    "test": "NODE_ENV=test yarn cleanup && jest -i --forceExit",
+    "test": "NODE_ENV=test yarn cleanup && jest",
     "precommit": "pretty-quick --staged",
     "migrate-up":
       "NODE_PATH=build node -r  libs/dotenv node_modules/.bin/db-migrate up",
@@ -31,6 +31,7 @@
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
     "knex": "^0.14.6",
+    "lodash": "^4.17.10",
     "pg-promise": "^8.4.0",
     "sql-template-strings": "^2.2.2"
   },
