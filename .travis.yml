@@ -13,7 +13,8 @@ before_script:
 install: 
   - yarn
   - yarn build
+  - npm install -g codecov
 
 script:
-  - yarn test
+  - yarn test && codecov
   - NODE_ENV=test yarn migrate-reset
