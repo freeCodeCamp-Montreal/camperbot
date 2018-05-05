@@ -21,6 +21,10 @@
       "NODE_PATH=build node -r libs/dotenv node_modules/.bin/db-migrate reset",
     "cleanup": "yarn migrate-reset && yarn migrate-up"
   },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-inline-json-import": "^0.2.1",
