@@ -1,6 +1,8 @@
 # camperbot
 
-:fire: freeCodeCamp Montreal discord bot, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
+[![Build Status](https://travis-ci.org/sirMerr/camperbot.svg?branch=dev)](https://travis-ci.org/sirMerr/camperbot) [![codecov](https://codecov.io/gh/sirMerr/camperbot/branch/dev/graph/badge.svg)](https://codecov.io/gh/sirMerr/camperbot) ![open source](https://img.shields.io/badge/❤-open--source-e64980.svg?longCache=true)
+
+🔥⛺️ freeCodeCamp Montreal discord bot 🤖, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
 
 Discord: https://discord.gg/WZB4AuS
 
@@ -13,7 +15,7 @@ To run this you need to have
 * Node 8
 * yarn or npm
 * cloned this repo
-* :heart:
+* ❤️
 
 ### Make a discord app
 
@@ -36,6 +38,7 @@ To run this you need to have
     ```
 
 ### Local DB
+
 Note: You don't need this if you are not working on commands that rely on a database. Additionally, we use PostgreSQL.
 
 Set up your local database and fill the rest of your `.env` with its credentials.
