@@ -4,8 +4,6 @@
 
 freeCodeCamp Montreal discord bot, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
 
-Discord: https://discord.gg/WZB4AuS
-
 ## Installation
 
 ### Prerequisites
