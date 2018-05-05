@@ -1,10 +1,8 @@
-# camperbot
+# camperbot ⛺️🔥🤖
 
-[![Build Status](https://travis-ci.org/sirMerr/camperbot.svg?branch=dev)](https://travis-ci.org/sirMerr/camperbot) [![codecov](https://codecov.io/gh/sirMerr/camperbot/branch/dev/graph/badge.svg)](https://codecov.io/gh/sirMerr/camperbot) ![open source](https://img.shields.io/badge/❤-open--source-e64980.svg?longCache=true)
+[![Build Status](https://travis-ci.org/sirMerr/camperbot.svg?branch=dev)](https://travis-ci.org/sirMerr/camperbot) [![codecov](https://codecov.io/gh/sirMerr/camperbot/branch/dev/graph/badge.svg)](https://codecov.io/gh/sirMerr/camperbot) ![open source](https://img.shields.io/badge/❤-open--source-e64980.svg?longCache=true) <a href="https://discord.gg/WZB4AuS">![Discord](https://img.shields.io/discord/362050213403164673.svg?logo=discord&colorB=7289DA)</a>
 
-🔥⛺️ freeCodeCamp Montreal discord bot 🤖, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
-
-Discord: https://discord.gg/WZB4AuS
+freeCodeCamp Montreal discord bot, using [discord.js](https://github.com/discordjs/discord.js). Gives people marshmellows.
 
 ## Installation
 
