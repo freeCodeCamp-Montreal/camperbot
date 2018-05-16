@@ -2,11 +2,11 @@
 
 ## Upcoming
 
-### May 7th - NodeSchool and freeCodeCamp Coffee and Code
+### May 21st - Coffee and Code at Shutterstock MTL
 
-https://www.facebook.com/events/659301934400819/
+https://www.facebook.com/events/118977448976511
 
-> <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/31290745_614378965575113_4004509524038778880_n.jpg?_nc_cat=0&oh=e1417d95f5c08afdc38ea6605a0cc1b4&oe=5B93B590" alt="NodeSchool and freeCodeCamp logos" style="height: 200px;"/>
+> <img src="https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/32501169_10214562837081268_5194766560874463232_n.jpg?_nc_cat=0&oh=1ee3636a705a9457ac70d29799a2acf5&oe=5B95DF55" alt="Person on laptop with a coffee" style="height: 200px;"/>
 >
 > We are hosting a joint event between NodeSchool and freeCodeCamp! 🎉🙌
 >
@@ -21,6 +21,22 @@ https://www.facebook.com/events/659301934400819/
 > The event is free, but you do need to sign up on NodeSchool’s website.
 
 ## Past
+
+### May 7th - NodeSchool and freeCodeCamp Coffee and Code
+
+https://www.facebook.com/events/659301934400819/
+
+> <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/31290745_614378965575113_4004509524038778880_n.jpg?_nc_cat=0&oh=e1417d95f5c08afdc38ea6605a0cc1b4&oe=5B93B590" alt="NodeSchool and freeCodeCamp logos" style="height: 200px;"/>
+>
+> Please register on the website to help us account for everyone! 😃
+>
+>Open to anyone who is working on side projects, following an online curriculum, or just want to get out of the house and meet like-minded people. All levels of experience are welcome!
+>
+>Bring your laptop and work on some self-paced online workshops from freeCodeCamp. Mentors will be available to give you hand if you get stuck.
+>
+>Coffee and snacks will be provided. ☕
+>
+> Please register to attend here: https://matchai.typeform.com/to/x26tJZ
 
 ### April 23, 2018 - Coffee and Code
 
