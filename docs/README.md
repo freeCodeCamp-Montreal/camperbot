@@ -7,7 +7,7 @@ Don’t know what freecodecamp is? Find out [here](https://www.freecodecamp.org/
 * **Join us here**: [https://discord.gg/WZB4AuS](https://discord.gg/WZB4AuS)
 * **Facebook Group**: [https://www.facebook.com/groups/free.code.camp.montreal](https://www.facebook.com/groups/free.code.camp.montreal)
 
-You will find here documentation for various features of freecodecamp-montreal’s unofficial Discord server.
+You will find here documentation for various features of freecodecamp-montreal’s official Discord server.
 
 It’s the place to discuss coding with peers learning how to program or brushing up on their skills, mainly via web development.
 
