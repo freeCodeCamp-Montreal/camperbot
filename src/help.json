@@ -8,13 +8,13 @@
   {
     "names": "!mine",
     "role": "@everyone",
-    "description": "Shows you how many marshmellows you have"
+    "description": "Shows you how many marshmallows you have"
   },
   {
-    "names": ["!marshmellow", "!mm"],
+    "names": ["!marshmallow", "!mm"],
     "role": "@everyone",
     "description":
-      "Gives someone a marshmellow for being helpful (ex: `!marshmellow @someone`)"
+      "Gives someone a marshmallow for being helpful (ex: `!marshmallow @someone`)"
   },
   {
     "names": "!ping",
