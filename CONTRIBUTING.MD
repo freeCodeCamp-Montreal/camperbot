@@ -16,13 +16,13 @@ To contribute, you can:
 If the bot has an odd behaviour, feel free to tell us!
 
 1. Check if the issue exists first: https://github.com/sirMerr/camperbot/issues
-2. If it doesn't, make a new bug [issue](https://github.com/sirMerr/camperbot/issues/new?template=Bug_report.md)! Follow the template.
+2. If it doesn't, open a new bug [issue](https://github.com/sirMerr/camperbot/issues/new?template=Bug_report.md)! Follow the template.
 
 ## Suggest Enhancements :tada:
 If you feel like the bot is missing something, let us know.
 
 1. Check if the issue exists first: https://github.com/sirMerr/camperbot/issues
-2. If it doesn't, make a new feature [issue](https://github.com/sirMerr/camperbot/issues/new?template=Feature_request.md)! Follow the template.
+2. If it doesn't, open a new feature [issue](https://github.com/sirMerr/camperbot/issues/new?template=Feature_request.md)! Follow the template.
 
 ## Add documentation :memo:
 Documentation is incredibly important, and is needed everywhere. Be it the markdown files (this one for example) or code documentation, we always need help in this department, especially in early development. Simply make a pull request with the file(s) you are helping to fix and you will be prompted with a template you can fill.
@@ -30,14 +30,21 @@ Documentation is incredibly important, and is needed everywhere. Be it the markd
 There are a few ways to make a pull request. If you just want to change a single file with a small documentation change or  markdown file, it's suggested to click on the pencil icon next to the file in GitHub.
 
 ## Contribute Code :sparkles:
-:construction:
+If it's a small one file change, feel free to follow the same instructions mentioned above. Otherwise you can 
+
+1. [Fork this repository](https://help.github.com/articles/fork-a-repo/)
+2. Make your changes to the fork
+3. Open a [Pull Request](https://help.github.com/articles/about-pull-requests/)
+4. Fill in the template (no need to delete the comments (`<!-- -->`)
+5. Submit the PR
+6. Wait for Review!
 
 # Styleguides
 
 ### git Branches
-Your branch name should try to start with one of the following followed by the main feature you're working on:
+Your branch name should try to start with one of the following (other alternatives possible) followed by the main feature you're working on:
 
-* `feature/avatars` for when you are adding a new feature
+* `feature/` for when you are adding a new feature
 * `fix/` for when you are making a fix for a bug
 * `optimize/` for when you are not inherently changing the behaviour of something, but are still making it better
 
