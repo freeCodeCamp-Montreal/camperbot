@@ -32,5 +32,10 @@
     "role": "@everyone",
     "description":
       "[For testing purposes] Check if you are in our database and adds you if you're not"
+  },
+  {
+    "names": "!emoji",
+    "role": "@everyone",
+    "description": "Adds an emoji to the Discord server"
   }
 ]

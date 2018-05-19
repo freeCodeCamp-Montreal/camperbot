@@ -163,3 +163,18 @@ export const helpSpecific = msg => {
     });
   }
 };
+
+// ex:
+// !emoji <name> <url>
+export const emoji = async msg => {
+  const { content, channel, guild } = msg;
+  const regex = /!emoji\s(.*)\s(.*)/;
+  const { 1: name, 2: url } = regex.exec(content);
+
+  try {
+    const newEmoji = await guild.createEmoji(url, name);
+    channel.send(`\`${newEmoji.name}\` ${newEmoji} has been added!`);
+  } catch (e) {
+    channel.send(`\`${name}\` could not be added! THAT'S SO SAD!`);
+  }
+};

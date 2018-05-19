@@ -15,6 +15,7 @@ import {
   mine,
   help,
   helpSpecific,
+  emoji,
 } from './commands';
 import { insertAccount } from './queries';
 
@@ -66,6 +67,9 @@ client.on('message', msg => {
         break;
       case commandMatches(['help', 'h']):
         help(msg);
+        break;
+      case commandMatches('emoji'):
+        emoji(msg);
         break;
       case content.match(/^(!help|!h) !?[a-zA-Z]+$/) !== null:
         helpSpecific(msg);
