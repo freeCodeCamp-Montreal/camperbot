@@ -173,7 +173,12 @@ export const emoji = async msg => {
   try {
     const { 1: name, 2: url } = regex.exec(content);
     const newEmoji = await guild.createEmoji(url, name);
-    channel.send(`\`${newEmoji.name}\` ${newEmoji} has been added!`);
+    channel.send({
+      embed: {
+        color: 0x0000ff,
+        description: `\`${newEmoji.name}\` ${newEmoji} has been added!`,
+      },
+    });
   } catch (e) {
     channel.send({
       embed: {
