@@ -169,9 +169,9 @@ export const helpSpecific = msg => {
 export const emoji = async msg => {
   const { content, channel, guild } = msg;
   const regex = /!emoji\s(.*)\s(.*)/;
-  const { 1: name, 2: url } = regex.exec(content);
 
   try {
+    const { 1: name, 2: url } = regex.exec(content);
     const newEmoji = await guild.createEmoji(url, name);
     channel.send(`\`${newEmoji.name}\` ${newEmoji} has been added!`);
   } catch (e) {
