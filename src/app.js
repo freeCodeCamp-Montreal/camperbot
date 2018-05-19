@@ -68,7 +68,7 @@ client.on('message', msg => {
       case commandMatches(['help', 'h']):
         help(msg);
         break;
-      case commandMatches('emoji'):
+      case commandMatches(['emoji']):
         emoji(msg);
         break;
       case content.match(/^(!help|!h) !?[a-zA-Z]+$/) !== null:

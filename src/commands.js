@@ -175,6 +175,11 @@ export const emoji = async msg => {
     const newEmoji = await guild.createEmoji(url, name);
     channel.send(`\`${newEmoji.name}\` ${newEmoji} has been added!`);
   } catch (e) {
-    channel.send(`\`${name}\` could not be added! THAT'S SO SAD!`);
+    channel.send({
+      embed: {
+        color: 0xff0000,
+        description: `\`${name}\` could not be added! THAT'S SO SAD!`,
+      },
+    });
   }
 };
