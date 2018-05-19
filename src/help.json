@@ -35,7 +35,7 @@
   },
   {
     "names": "!emoji",
-    "role": "@everyone",
+    "role": "Camper",
     "description": "Adds an emoji to the Discord server"
   }
 ]

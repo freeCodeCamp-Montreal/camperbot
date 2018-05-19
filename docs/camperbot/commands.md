@@ -14,7 +14,7 @@ All commands start with `!`
 | `!nexteevent`         | `!nextevent`                                 | 🚧Tells you when the next event is with a link                                                                                    |
 | `!iknow`              | `!iknow Ruby`, `iknow 'HTML & CSS'`          | 🚧Add a self-summary of languages/tech you know                                                                                   |
 | `!theyknow`           | `!theyknow @someone`                         | 🚧Shows a list of techs/languages the specified user knows                                                                        |
-| `!emoji`              | `!emoji rip https://i.imgur.com/w3duR07.png` | Adds a new emoji to the server                                                                                                    |
+| `!emoji`              | `!emoji rip https://i.imgur.com/w3duR07.png` | Adds a new emoji to the server. **Camper**                                                                                        |
 
 ### Ideas
 
