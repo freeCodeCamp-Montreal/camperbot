@@ -16,10 +16,13 @@ To contribute, you can:
 If the bot has an odd behaviour, feel free to tell us!
 
 1. Check if the issue exists first: https://github.com/sirMerr/camperbot/issues
-2. If it doesn't, make a new [issue](https://github.com/sirMerr/camperbot/issues/new)! Follow the template.
+2. If it doesn't, make a new bug [issue](https://github.com/sirMerr/camperbot/issues/new?template=Bug_report.md)! Follow the template.
 
 ## Suggest Enhancements :tada:
-If you feel like the bot is missing something, let us know. Go to https://github.com/sirMerr/camperbot/issues/new?template=change.md and fill in the template.
+If you feel like the bot is missing something, let us know.
+
+1. Check if the issue exists first: https://github.com/sirMerr/camperbot/issues
+2. If it doesn't, make a new feature [issue](https://github.com/sirMerr/camperbot/issues/new?template=Feature_request.md)! Follow the template.
 
 ## Add documentation :memo:
 Documentation is incredibly important, and is needed everywhere. Be it the markdown files (this one for example) or code documentation, we always need help in this department, especially in early development. Simply make a pull request with the file(s) you are helping to fix and you will be prompted with a template you can fill.
