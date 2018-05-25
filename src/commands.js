@@ -183,7 +183,7 @@ export const emoji = async msg => {
     channel.send({
       embed: {
         color: 0xff0000,
-        description: `\`${name}\` could not be added! THAT'S SO SAD!`,
+        description: "Your emoji could not be added! THAT'S SO SAD! Make sure you format the command as `!emoji <name> <url>`.",
       },
     });
   }
