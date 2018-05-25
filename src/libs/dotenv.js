@@ -7,7 +7,8 @@ import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 import { assert } from 'console';
 
-assert(!!process.env.NODE_ENV, 'Missing env variable NODE_ENV');
+// Uncomment to force env
+// assert(!!process.env.NODE_ENV, 'Missing env variable NODE_ENV');
 
 // Possible configs to look at
 const configs = [
