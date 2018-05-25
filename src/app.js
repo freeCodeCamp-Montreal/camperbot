@@ -65,14 +65,14 @@ client.on('message', msg => {
       case commandMatches('mine'):
         mine(msg);
         break;
+      case content.match(/^(!help|!h) !?[a-zA-Z]+$/) !== null:
+        helpSpecific(msg);
+        break;
       case commandMatches(['help', 'h']):
         help(msg);
         break;
       case commandMatches(['emoji']):
         emoji(msg);
-        break;
-      case content.match(/^(!help|!h) !?[a-zA-Z]+$/) !== null:
-        helpSpecific(msg);
         break;
       default:
         break;
