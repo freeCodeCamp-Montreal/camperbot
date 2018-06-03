@@ -6,10 +6,10 @@
 https://www.facebook.com/events/368106957012487/
 
 > <img src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/34413077_10214699332973580_7647996385077231616_n.jpg?_nc_cat=0&oh=a3e1cfa7430fc67d9a34abe293d8213b&oe=5BB5DD03" alt="Person on laptop with a coffee" style="height: 200px;"/>
->MT Lab has graciously invited us to host our Coffee and Code at their offices this week. ☕ 
->Bring your laptop and get ready to crush some code challenges! 💻
+> MT Lab has graciously invited us to host our Coffee and Code at their offices this week. ☕ 
+> Bring your laptop and get ready to crush some code challenges! 💻
 >
->Open to anyone who is working on side projects, following an online curriculum, or just want to get out of the house and meet like-minded people. All levels of experience are welcome!
+> Open to anyone who is working on side projects, following an online curriculum, or just want to get out of the house and meet like-minded people. All levels of experience are welcome!
 
 ## Past
 
