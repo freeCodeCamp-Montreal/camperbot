@@ -2,9 +2,19 @@
 
 ## Upcoming
 
-### June 21st - Coffee and Code at MT Labs
-No formal facebook event yet
+### Thursday June 28 - Coffee and Code at MT Labs
+https://www.facebook.com/events/471636949932511/
 
+> <img src="https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/32501169_10214562837081268_5194766560874463232_n.jpg?_nc_cat=0&oh=1ee3636a705a9457ac70d29799a2acf5&oe=5B95DF55" alt="Person on laptop with a coffee" style="height: 200px;"/>
+> ☕ Another edition of Coffee and Code, at MT Labs with a twist! Some mentors will focus on helping beginners setup git and GitHub, showcase useful features (GitHub apps, Issues, etc.) and help those that aren't too sure how a commit works and why branches exist.
+>
+> 🏃 Want to get a head start? Check out our git and GitHub docs: https://sirmerr.github.io/camperbot/#/resources?id=git-and-github
+>
+> 📚 Already know this stuff? Try contributing to an open source project (such as our discord bot ;D), finish your FCC curriculum, chat with other campers or work on a project of your own.
+>
+> P.S. We apologize for the recent change of venue and date, and most likely another change to come. We will do our best to secure a stable location as soon as we can!
+>
+> GET YOUR TICKET HERE: https://ti.to/freecodecamp-montreal/git-edition-coffee-and-code-at-mt-labs#schedule
 ## Past
 
 ### June 7 - Coffee and Code at Mt Labs
