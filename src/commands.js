@@ -99,10 +99,12 @@ export const mine = msg => {
 
 // Sends a DM with the help embed dialog
 export const help = msg => {
-  const description =
-    'You can find a list of commands here:' +
-    '\nhttps://sirmerr.github.io/camperbot/#/camperbot/commands' +
-    '\n\nFor a specific command help, use `[!h|!help] CommandName` (for example `!h !marshmallow`)';
+  const description = `You can find a list of commands here:
+       https://sirmerr.github.io/camperbot/#/camperbot/commands
+       \nFor a specific command help, use \`[!h|!help] CommandName\` (for example \`!h !marshmallow\`)`.replace(
+    /^ +/gm,
+    ''
+  );
 
   // Send a private embed message with a blue left border
   msg.author.send({
@@ -126,7 +128,7 @@ export const helpSpecific = msg => {
       if (Array.isArray(el.names)) {
         if (el.names.find(name => command === name) !== undefined) {
           commandInfo = {
-            title: '`' + el.names.join('` | `') + '`',
+            title: `\`${el.names.join('` | `')}\``,
             description: el.description,
             role: el.role,
           };
@@ -136,7 +138,7 @@ export const helpSpecific = msg => {
       }
       if (el.names === command) {
         commandInfo = {
-          title: '`' + command + '`',
+          title: `\`${command}\``,
           description: el.description,
           role: el.role,
         };
@@ -183,7 +185,8 @@ export const emoji = async msg => {
     channel.send({
       embed: {
         color: 0xff0000,
-        description: "Your emoji could not be added! THAT'S SO SAD! Make sure you format the command as `!emoji <name> <url>`.",
+        description:
+          "Your emoji could not be added! THAT'S SO SAD! Make sure you format the command as `!emoji <name> <url>`.",
       },
     });
   }
