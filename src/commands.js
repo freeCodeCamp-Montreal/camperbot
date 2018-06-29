@@ -116,31 +116,19 @@ export const help = msg => {
 };
 
 // Send details of a given command
-export const helpSpecific = msg => {
-  const { content, channel } = msg;
-  const userRoles = msg.member.roles;
-  const command = content.split(' ')[1];
+export const helpSpecific = (msg, command) => {
+  // const userRoles = msg.member.roles;
   let commandInfo;
 
   // True if command exists, otherwise returns false
   const commandExists =
     commandsList.find(el => {
-      if (Array.isArray(el.names)) {
-        if (el.names.find(name => command === name) !== undefined) {
-          commandInfo = {
-            title: `\`${el.names.join('` | `')}\``,
-            description: el.description,
-            role: el.role,
-          };
-          return true;
-        }
-        return false;
-      }
-      if (el.names === command) {
+      if (el.names.find(name => command === name) !== undefined) {
         commandInfo = {
-          title: `\`${command}\``,
+          title: `\`${el.names.join('` | `')}\``,
           description: el.description,
           role: el.role,
+          usage: el.usage,
         };
         return true;
       }
@@ -148,15 +136,25 @@ export const helpSpecific = msg => {
     }) !== undefined;
 
   if (commandExists) {
-    channel.send({
+    msg.channel.send({
       embed: {
         color: 0x0000ff,
         title: commandInfo.title,
         description: commandInfo.description,
+        fields: [
+          {
+            name: 'Roles',
+            value: `\`${commandInfo.role}\``,
+          },
+          {
+            name: 'Usage',
+            value: `\`${commandInfo.usage}\``,
+          },
+        ],
       },
     });
   } else {
-    channel.send({
+    msg.channel.send({
       embed: {
         color: 0xff0000,
         description:
