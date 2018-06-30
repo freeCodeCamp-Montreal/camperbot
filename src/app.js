@@ -2,11 +2,11 @@
  * Main entry point of our app. Sets up the client and
  * lays out the different commands users
  */
-import Discord from 'discord.js';
+import Discord from "discord.js";
 
 // Side effect imports
-import './libs/dotenv';
-import './libs/postgres';
+import "./libs/dotenv";
+import "./libs/postgres";
 // Module imports
 import {
   knowme,
@@ -16,21 +16,21 @@ import {
   help,
   helpSpecific,
   emoji,
-} from './commands';
-import { insertAccount } from './queries';
+} from "./commands";
+import { insertAccount } from "./queries";
 
 // Create an instance of Discord client
 const client = new Discord.Client();
 // Prefix that every command should start with
-const prefix = '!';
+const prefix = "!";
 
 // Bot will only start reacting to information once ready is emitted
-client.on('ready', () => {
+client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 // Create an event listener for messages
-client.on('message', async msg => {
+client.on("message", async msg => {
   // Ignore messages from the bot
   if (msg.author.bot) return;
 
@@ -50,30 +50,30 @@ client.on('message', async msg => {
   const command = args.shift().toLowerCase();
 
   switch (command) {
-    case 'ping':
-      msg.channel.send('pong!');
+    case "ping":
+      msg.channel.send("pong!");
       break;
-    case 'knowme':
+    case "knowme":
       knowme(msg);
       break;
-    case 'repopulate':
-      if (msg.member.roles.has('363153451833753600')) repopulate(msg);
+    case "repopulate":
+      if (msg.member.roles.has("363153451833753600")) repopulate(msg);
       break;
-    case 'marshmallow':
-    case 'mm':
+    case "marshmallow":
+    case "mm":
       marshmallow(msg);
       break;
-    case 'mine':
+    case "mine":
       mine(msg);
       break;
-    case 'help':
-    case 'h':
+    case "help":
+    case "h":
       if (args.length === 0) help(msg);
-      else if (args[0].match(new RegExp(`^${prefix}?\\w+`, 'g')))
+      else if (args[0].match(new RegExp(`^${prefix}?\\w+`, "g")))
         helpSpecific(msg, args[0].slice(prefix.length).trim());
-      else helpSpecific(msg, '');
+      else helpSpecific(msg, "");
       break;
-    case 'emoji':
+    case "emoji":
       emoji(msg);
       break;
     default:
@@ -82,7 +82,7 @@ client.on('message', async msg => {
 });
 
 // When new people join, add them to our database
-client.on('guildMemberAdd', member => {
+client.on("guildMemberAdd", member => {
   insertAccount({
     discordId: member.id,
     errorHandler: err => console.log(err),

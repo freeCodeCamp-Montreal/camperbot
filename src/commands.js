@@ -6,19 +6,19 @@ import {
   insertAccount,
   incrementMarshmallow,
   getMarshmallows,
-} from './queries';
-import commandsList from './help.json';
+} from "./queries";
+import commandsList from "./help.json";
 
 // Manually triggers insert into database for a user
 // Mostly for testing or for users before this bot was made
 export const knowme = msg => {
-  const callback = data => msg.reply('I have you in my sights now :eyes: ');
+  const callback = data => msg.reply("I have you in my sights now :eyes: ");
   const errorHandler = err => {
-    console.log('!knowme : ', err);
+    console.log("!knowme : ", err);
     // Duplicate user (we could instead do nothing on conflict)
     // but this is more fun :D
-    if (err.code === '23505') {
-      msg.reply('I already know you!');
+    if (err.code === "23505") {
+      msg.reply("I already know you!");
     }
   };
 
@@ -45,7 +45,7 @@ export const repopulate = msg => {
       },
     });
   });
-  msg.reply('Repopulated accounts table.');
+  msg.reply("Repopulated accounts table.");
 };
 
 // Give user(s) marshmallows
@@ -60,7 +60,7 @@ export const marshmallow = msg => {
       discordId: user.id,
       callback: data => {
         const marshmallowEmojis = msg.guild.emojis
-          .filter(emoji => emoji.name.match('mm'))
+          .filter(emoji => emoji.name.match("mm"))
           .array();
         const randomMarshmallowEmoji =
           marshmallowEmojis[
@@ -74,8 +74,8 @@ export const marshmallow = msg => {
         );
       },
       errorHandler: err => {
-        console.log('!mm', err);
-        msg.reply('Unable to give marshmallows :(');
+        console.log("!mm", err);
+        msg.reply("Unable to give marshmallows :(");
       },
     });
   }
@@ -87,7 +87,7 @@ export const mine = msg => {
     discordId: msg.author.id,
     callback: data => {
       const marshmallowEmojis = msg.guild.emojis
-        .filter(emoji => emoji.name.match('mm'))
+        .filter(emoji => emoji.name.match("mm"))
         .array();
       const randomMarshmallowEmoji =
         marshmallowEmojis[Math.floor(Math.random() * marshmallowEmojis.length)];
@@ -103,7 +103,7 @@ export const help = msg => {
        https://sirmerr.github.io/camperbot/#/camperbot/commands
        \nFor a specific command help, use \`[!h|!help] CommandName\` (for example \`!h !marshmallow\`)`.replace(
     /^ +/gm,
-    ''
+    ""
   );
 
   // Send a private embed message with a blue left border
@@ -125,7 +125,7 @@ export const helpSpecific = (msg, command) => {
     commandsList.find(el => {
       if (el.names.find(name => command === name) !== undefined) {
         commandInfo = {
-          title: `\`${el.names.join('` | `')}\``,
+          title: `\`${el.names.join("` | `")}\``,
           description: el.description,
           role: el.role,
           usage: el.usage,
@@ -143,11 +143,11 @@ export const helpSpecific = (msg, command) => {
         description: commandInfo.description,
         fields: [
           {
-            name: 'Roles',
+            name: "Roles",
             value: `\`${commandInfo.role}\``,
           },
           {
-            name: 'Usage',
+            name: "Usage",
             value: `\`${commandInfo.usage}\``,
           },
         ],
