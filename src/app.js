@@ -30,20 +30,16 @@ client.on("ready", () => {
 });
 
 // Create an event listener for messages
-client.on("message", async msg => {
+client.on("message", msg => {
+  const { content, author, channel, member } = msg;
+
   // Ignore messages from the bot
-  if (msg.author.bot) return;
+  if (author.bot) return;
 
   //Ignore any message that does not start with prefix
-  if (msg.content.indexOf(prefix) !== 0) return;
+  if (!content.startsWith(prefix)) return;
 
-  //   console.log(`content: ${msg.content}
-  // author: ${msg.author}
-  // channel: ${msg.channel}
-  // member: ${msg.member}
-  // `);
-
-  const args = msg.content
+  const args = content
     .slice(prefix.length)
     .trim()
     .split(/ +/g);
@@ -51,13 +47,13 @@ client.on("message", async msg => {
 
   switch (command) {
     case "ping":
-      msg.channel.send("pong!");
+      channel.send("pong!");
       break;
     case "knowme":
       knowme(msg);
       break;
     case "repopulate":
-      if (msg.member.roles.has("363153451833753600")) repopulate(msg);
+      if (member.roles.has("363153451833753600")) repopulate(msg);
       break;
     case "marshmallow":
     case "mm":

@@ -2,47 +2,50 @@
   {
     "names": ["help", "h"],
     "role": "@everyone",
-    "usage": "!h",
+    "usage": [
+      "[!h|!help]",
+      "[!h|!help] CommandName (for example `!h !marshmallow`)"
+    ],
     "description":
       "Either shows a help for a single command, or DMs you a help link if no parameters are specified."
   },
   {
     "names": ["mine"],
     "role": "@everyone",
-    "usage": "!mine",
+    "usage": ["!mine"],
     "description": "Shows you how many marshmallows you have"
   },
   {
     "names": ["marshmallow", "mm"],
     "role": "@everyone",
-    "usage": "!marshmallow @someone",
+    "usage": ["[!mm|!marshmallow] @someone"],
     "description":
       "Gives someone a marshmallow for being helpful (ex: `!marshmallow @someone`)"
   },
   {
     "names": ["ping"],
     "role": "@everyone",
-    "usage": "!ping",
+    "usage": ["!ping"],
     "description": "Responds with `pong!`"
   },
   {
     "names": ["repopulate"],
     "role": "FireStarter",
-    "usage": "!repopulate",
+    "usage": ["!repopulate"],
     "description":
       "Add every member of the server/guild who isn't in the `accounts` table"
   },
   {
     "names": ["knowme"],
     "role": "@everyone",
-    "usage": "!knowme",
+    "usage": ["!knowme"],
     "description":
       "[For testing purposes] Check if you are in our database and adds you if you're not"
   },
   {
     "names": ["emoji"],
     "role": "Camper",
-    "usage": "!emoji",
+    "usage": ["!emoji"],
     "description": "Adds an emoji to the Discord server"
   }
 ]

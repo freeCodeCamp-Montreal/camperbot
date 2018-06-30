@@ -7,6 +7,7 @@ import {
   incrementMarshmallow,
   getMarshmallows,
 } from "./queries";
+import { removeSpaces } from "./libs/utils.js";
 import commandsList from "./help.json";
 
 // Manually triggers insert into database for a user
@@ -99,12 +100,9 @@ export const mine = msg => {
 
 // Sends a DM with the help embed dialog
 export const help = msg => {
-  const description = `You can find a list of commands here:
+  const description = removeSpaces(`You can find a list of commands here:
        https://sirmerr.github.io/camperbot/#/camperbot/commands
-       \nFor a specific command help, use \`[!h|!help] CommandName\` (for example \`!h !marshmallow\`)`.replace(
-    /^ +/gm,
-    ""
-  );
+       \nFor a specific command help, use \`[!h|!help] CommandName\` (for example \`!h !marshmallow\`)`);
 
   // Send a private embed message with a blue left border
   msg.author.send({
@@ -117,18 +115,18 @@ export const help = msg => {
 
 // Send details of a given command
 export const helpSpecific = (msg, command) => {
-  // const userRoles = msg.member.roles;
+  const { channel } = msg;
   let commandInfo;
 
   // True if command exists, otherwise returns false
   const commandExists =
     commandsList.find(el => {
-      if (el.names.find(name => command === name) !== undefined) {
+      if (el.names.find(name => command === name)) {
         commandInfo = {
           title: `\`${el.names.join("` | `")}\``,
           description: el.description,
           role: el.role,
-          usage: el.usage,
+          usage: el.usage.join("\n"),
         };
         return true;
       }
@@ -136,7 +134,7 @@ export const helpSpecific = (msg, command) => {
     }) !== undefined;
 
   if (commandExists) {
-    msg.channel.send({
+    channel.send({
       embed: {
         color: 0x0000ff,
         title: commandInfo.title,
@@ -154,7 +152,7 @@ export const helpSpecific = (msg, command) => {
       },
     });
   } else {
-    msg.channel.send({
+    channel.send({
       embed: {
         color: 0xff0000,
         description:
