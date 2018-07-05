@@ -100,6 +100,7 @@ export const mine = msg => {
 
 // Sends a DM with the help embed dialog
 export const help = msg => {
+
   const description = removeSpaces(`You can find a list of commands here:
        https://sirmerr.github.io/camperbot/#/camperbot/commands
        \nFor a specific command help, use \`[!h|!help] CommandName\` (for example \`!h !marshmallow\`)`);
