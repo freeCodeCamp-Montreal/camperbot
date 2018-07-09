@@ -2,9 +2,9 @@
  * Sets up the database connections so we can access
  * and manipulate it
  */
-import k from 'knex';
-import pg from 'pg-promise';
-import sql from 'sql-template-strings';
+import k from "knex";
+import pg from "pg-promise";
+import sql from "sql-template-strings";
 
 // dotenv is called before this
 const connection = {
@@ -22,6 +22,6 @@ const pgp = pg();
 const db = pgp(connection);
 // Create object for query builder
 // knex is not really being used right now, might be removed
-const knex = k({ client: 'pg', connection });
+const knex = k({ client: "pg", connection });
 
 export { db, knex, pgp, sql };

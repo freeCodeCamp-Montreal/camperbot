@@ -6,19 +6,20 @@ import {
   insertAccount,
   incrementMarshmallow,
   getMarshmallows,
-} from './queries';
-import commandsList from './help.json';
+} from "./queries";
+import { removeSpaces } from "./libs/utils.js";
+import commandsList from "./help.json";
 
 // Manually triggers insert into database for a user
 // Mostly for testing or for users before this bot was made
 export const knowme = msg => {
-  const callback = data => msg.reply('I have you in my sights now :eyes: ');
+  const callback = data => msg.reply("I have you in my sights now :eyes: ");
   const errorHandler = err => {
-    console.log('!knowme : ', err);
+    console.log("!knowme : ", err);
     // Duplicate user (we could instead do nothing on conflict)
     // but this is more fun :D
-    if (err.code === '23505') {
-      msg.reply('I already know you!');
+    if (err.code === "23505") {
+      msg.reply("I already know you!");
     }
   };
 
@@ -45,7 +46,7 @@ export const repopulate = msg => {
       },
     });
   });
-  msg.reply('Repopulated accounts table.');
+  msg.reply("Repopulated accounts table.");
 };
 
 // Give user(s) marshmallows
@@ -60,7 +61,7 @@ export const marshmallow = msg => {
       discordId: user.id,
       callback: data => {
         const marshmallowEmojis = msg.guild.emojis
-          .filter(emoji => emoji.name.match('mm'))
+          .filter(emoji => emoji.name.match("mm"))
           .array();
         const randomMarshmallowEmoji =
           marshmallowEmojis[
@@ -74,8 +75,8 @@ export const marshmallow = msg => {
         );
       },
       errorHandler: err => {
-        console.log('!mm', err);
-        msg.reply('Unable to give marshmallows :(');
+        console.log("!mm", err);
+        msg.reply("Unable to give marshmallows :(");
       },
     });
   }
@@ -87,7 +88,7 @@ export const mine = msg => {
     discordId: msg.author.id,
     callback: data => {
       const marshmallowEmojis = msg.guild.emojis
-        .filter(emoji => emoji.name.match('mm'))
+        .filter(emoji => emoji.name.match("mm"))
         .array();
       const randomMarshmallowEmoji =
         marshmallowEmojis[Math.floor(Math.random() * marshmallowEmojis.length)];
@@ -99,11 +100,10 @@ export const mine = msg => {
 
 // Sends a DM with the help embed dialog
 export const help = msg => {
-  const description =
-         `You can find a list of commands here:
-         https://sirmerr.github.io/camperbot/#/camperbot/commands
-         \nFor a specific command help, use \`[!h|!help] CommandName\` (for example \`!h !marshmallow\`)`
-         .replace(/^ +/gm, '');
+
+  const description = removeSpaces(`You can find a list of commands here:
+       https://sirmerr.github.io/camperbot/#/camperbot/commands
+       \nFor a specific command help, use \`[!h|!help] CommandName\` (for example \`!h !marshmallow\`)`);
 
   // Send a private embed message with a blue left border
   msg.author.send({
@@ -115,31 +115,19 @@ export const help = msg => {
 };
 
 // Send details of a given command
-export const helpSpecific = msg => {
-  const { content, channel } = msg;
-  const userRoles = msg.member.roles;
-  const command = content.split(' ')[1];
+export const helpSpecific = (msg, command) => {
+  const { channel } = msg;
   let commandInfo;
 
   // True if command exists, otherwise returns false
   const commandExists =
     commandsList.find(el => {
-      if (Array.isArray(el.names)) {
-        if (el.names.find(name => command === name) !== undefined) {
-          commandInfo = {
-            title: `\`${el.names.join('` | `')}\``,
-            description: el.description,
-            role: el.role,
-          };
-          return true;
-        }
-        return false;
-      }
-      if (el.names === command) {
+      if (el.names.find(name => command === name)) {
         commandInfo = {
-          title: `\`${command}\``,
+          title: `\`${el.names.join("` | `")}\``,
           description: el.description,
           role: el.role,
+          usage: el.usage.join("\n"),
         };
         return true;
       }
@@ -152,6 +140,16 @@ export const helpSpecific = msg => {
         color: 0x0000ff,
         title: commandInfo.title,
         description: commandInfo.description,
+        fields: [
+          {
+            name: "Roles",
+            value: `\`${commandInfo.role}\``,
+          },
+          {
+            name: "Usage",
+            value: `\`${commandInfo.usage}\``,
+          },
+        ],
       },
     });
   } else {
@@ -184,7 +182,8 @@ export const emoji = async msg => {
     channel.send({
       embed: {
         color: 0xff0000,
-        description: "Your emoji could not be added! THAT'S SO SAD! Make sure you format the command as `!emoji <name> <url>`.",
+        description:
+          "Your emoji could not be added! THAT'S SO SAD! Make sure you format the command as `!emoji <name> <url>`.",
       },
     });
   }
