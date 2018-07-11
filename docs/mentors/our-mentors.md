@@ -14,7 +14,7 @@ All of the mentors mentioned here are familiar with **setting up dev tools** (Ci
 
 ### Experience
 
-This summer, Tiffany will be working as a **Platform Engineer Intern** at GitHub.
+She will be starting a job as a **Software Development Engineer** at Expedia in July. She was supposed to be working as a **Platform Engineer Intern** at GitHub during the summer.
 
 She has been working as a professional developer for about 3 years, as she worked during her studies, programming custom Arduinos, making platforms, optimizing work flows, doing data analysis and building APIs. She has a background in Computer Science. She currently works as a **Full Stack developer** and is usually working on personal and open source projects in her free time.
 
@@ -69,7 +69,7 @@ In terms of personality, he's very amicable and likes to discuss techs and is pe
 
 ### Experience
 
-Matan is a **Software Development Engineer in Test (SDET)** at Shutterstock and had jobs as a QA tester and Frontend developer before that. He studied in Electric Engineering, but was tired of having broken machines during his exams so he just started working instead. He's does dev ops too, although would not say he is an expert at it.
+Matan is a **Senior Development Engineer in Test** at Autodesk. He was a **Software Development Engineer in Test (SDET)** at Shutterstock and had jobs as a QA tester and Frontend developer before that. He studied in Electric Engineering, but was tired of having broken machines during his exams so he just started working instead. He's does dev ops too, although would not say he is an expert at it.
 
 ### I can help with
 
