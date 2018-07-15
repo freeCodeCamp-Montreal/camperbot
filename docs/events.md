@@ -2,6 +2,8 @@
 
 ## Upcoming
 
+## Past
+
 ### Thursday June 28 - Coffee and Code at MT Labs
 https://www.facebook.com/events/471636949932511/
 
@@ -15,7 +17,6 @@ https://www.facebook.com/events/471636949932511/
 > P.S. We apologize for the recent change of venue and date, and most likely another change to come. We will do our best to secure a stable location as soon as we can!
 >
 > GET YOUR TICKET HERE: https://ti.to/freecodecamp-montreal/git-edition-coffee-and-code-at-mt-labs#schedule
-## Past
 
 ### June 7 - Coffee and Code at Mt Labs
 https://www.facebook.com/events/368106957012487/
