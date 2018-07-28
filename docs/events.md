@@ -1,6 +1,17 @@
 # Events
 
 ## Upcoming
+### Thursday August 2 - Coffee and Code at MT Labs
+https://www.facebook.com/events/2029313007139428/
+
+> <img src="https://scontent.fymq2-1.fna.fbcdn.net/v/t1.0-9/37967885_2064897703573274_2418236470784425984_o.jpg?_nc_cat=0&oh=dfc01c0fc6c0c17732d7b099b52a4a69&oe=5C09AAF2" alt="Coffee with code symbol" style="height: 200px;"/>
+>
+> ☕ Thanks for the wait, after a hiatus, we're back to our regularly scheduled meetups. Time for another edition of Coffee and Code, at MT Labs! 
+>
+> Open to anyone who is working on side projects, following an online curriculum, or just want to get out of the house 
+> and meet like-minded people. All levels of experience are welcome!
+>
+> Join our discord if you want to talk to people outside of coffee and code: https://discord.gg/WZB4AuS
 
 ## Past
 
