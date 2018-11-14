@@ -18,9 +18,12 @@ This one is highly recommended.
 
 ## Websites that teach stuff
 
-* [**nodeschool**]((https://nodeschool.io/), open source workshops that teach web software skills
+* [**nodeschool**](https://nodeschool.io/), open source workshops that teach web software skills
 * [**PluralSight**](https://www.pluralsight.com/): Technology learning video platform \($\)
 * [**codebar tutorials**](http://tutorials.codebar.io/): A bunch of free tutorials/lessons. Covers HTML & CSS, JavaScript, Ruby, PHP, etc. **codebar** is a non-profit initiative that facilitates the growth of a diverse tech community by running regular programming workshops.
+* [**mdn**](https://developer.mozilla.org/en-US/docs/Learn): Mozilla's learning area to learn web development
+* [freeCodeCamp](**https://www.freecodecamp.org/**): Curriculum to learn web development with exercises and projects
+* [codeacademy](https://codecademy.com): An online interactive platform that offers free and paid coding classes. You code directly in the website.
 
 ## Test your skills
 
