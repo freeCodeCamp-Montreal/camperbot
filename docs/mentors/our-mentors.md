@@ -14,7 +14,7 @@ All of the mentors mentioned here are familiar with **setting up dev tools** (Ci
 
 ### Experience
 
-She will be starting a job as a **Software Development Engineer** at **Expedia**. She was supposed to be working as a Platform Engineer Intern at GitHub during the summer and worked as a Full Stack Engineer at a few startups before that.
+She currently works as a **Software Development Engineer** at **Expedia**. She was supposed to be working as a Platform Engineer Intern at GitHub during the summer and worked as a Full Stack Engineer at a few startups before that.
 
 She has been working as a professional developer for about 4 years, as she worked during her studies, programming custom Arduinos, making platforms, tooling, optimizing work flows, doing data analysis and building APIs. She has a background in Computer Science but is mostly self-taught. She is usually working on personal and open source projects in her free time.
 
